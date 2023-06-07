@@ -1,6 +1,6 @@
 name: CI do Windows
 
-on:
+on:   
   push:
     branches: [main]
 
@@ -18,6 +18,12 @@ jobs:
       - name: Instalar as dependências
         run: npm install
 
+      - name: Verificar acesso à internet
+        run: |
+          ping -n 4 8.8.8.8 > nul
+          if %errorlevel% neq 0 exit 1
+
       - name: Executar o arquivo index.js
         run: |
           node index.js
+          
