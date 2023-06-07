@@ -78,7 +78,6 @@ client.on('qr', (qrCode) => {
     console.log('\n');
 });
 
-
 client.on('authenticated', () => {
     console.log(chalk.green('[SUCCESS] Login autenticado!'));
 });
@@ -94,7 +93,6 @@ client.on('disconnected', (reason) => {
     console.log(chalk.red('[DISCONNECTED] Tentando reconectar...'));
     client.initialize();
 });
-
 
 const buscarMensagensAniversario = async () => {
     try {
